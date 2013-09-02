@@ -13,6 +13,8 @@ public interface UserDao {
 
     public List<User> selectAll() throws DBException;
 
+    public int deleteById(int id) throws DBException;
+
     public void insert(User user) throws DBException, NotUniqueUserLoginException, NotUniqueUserEmailException;
 
 }
