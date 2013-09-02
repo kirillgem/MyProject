@@ -22,32 +22,43 @@ public final class JdbcUtils {
             initialized = true;
         }
     }
-    public static void closeQuietly(ResultSet rs){
-        if(rs!=null){
-              try{
-                  rs.close();
-              }
-              catch (SQLException e){
-                  //NOP
-              }
+    public static void closeQuietly(ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                // NOP
+            }
         }
-    }public static void closeQuietly(Statement ps){
-        if(ps!=null){
-              try{
-                  ps.close();
-              }
-              catch (SQLException e){
-                  //NOP
-              }
+    }
+
+    public static void closeQuietly(Statement ps) {
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                // NOP
+            }
         }
-    }public static void closeQuietly(Connection conn){
-        if(conn!=null){
-              try{
-                  conn.close();
-              }
-              catch (SQLException e){
-                  //NOP
-              }
+    }
+
+    public static void closeQuietly(Connection conn) {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                // NOP
+            }
+        }
+    }
+
+    public static void rollbackQuietly(Connection conn) {
+        if (conn != null) {
+            try {
+                conn.rollback();
+            } catch (SQLException e) {
+                // NOP
+            }
         }
     }
 }
